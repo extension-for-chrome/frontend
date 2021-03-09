@@ -1,26 +1,27 @@
-import React from 'react';
+import React, {useState} from 'react';
+import GoogleLogin from 'react-google-login';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  return (
+  const [isSignedIn, setSignedIn] =useState(!!localStorage.getItem('responseGoogle'));
+  const responseGoogle = (response: any) => {
+      localStorage.setItem('responseGoogle', JSON.stringify(response))
+      setSignedIn(!!localStorage.getItem('responseGoogle'))
+  }
+  return !isSignedIn ? (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <h2 className="title">Please login to you Google account to add contacts</h2>
+      <GoogleLogin
+          clientId="1096724248642-g2fpk80r33cjrdh7ht0itoivi9o00rfo.apps.googleusercontent.com"
+          buttonText="Login with Google"
+          onSuccess={responseGoogle}
+          onFailure={responseGoogle}
+          cookiePolicy={'single_host_origin'}
+          isSignedIn={false}
+      />
     </div>
-  );
+  ) : <div/>
 }
 
 export default App;
