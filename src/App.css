@@ -1,5 +1,51 @@
 .App {
+  height: 100%;
+  min-height: 500px;
+  width: 100%;
   text-align: center;
+  background-color: #282c34;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  padding: 100px;
+  padding-bottom: 50px;
+  box-sizing: border-box;
+}
+
+.form {
+  justify-content: flex-start;
+}
+
+.MuiFormLabel-root {
+  color: #fff !important;
+}
+
+.MuiInputBase-input {
+  color: #fff !important;
+}
+
+.MuiInput-underline:before {
+  border-color: #fff !important;
+}
+
+.MuiButtonBase-root.MuiButton-root {
+  margin-top: auto;
+}
+
+.logo {
+  margin-top: 0;
+  font-size: 35px;
+  text-align: center;
+  font-weight: 800;
+  color: #61dafb;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 400;
+  max-width: 250px;
 }
 
 .App-logo {
