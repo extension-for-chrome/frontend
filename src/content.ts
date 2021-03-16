@@ -1,0 +1,2 @@
+export const body = document.getElementsByTagName("body");
+console.log('body', body)

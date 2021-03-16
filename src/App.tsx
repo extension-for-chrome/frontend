@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import GoogleLogin from 'react-google-login';
-import logo from './logo.svg';
 import './App.css';
 import BaseForm from "./components/BaseForm";
 

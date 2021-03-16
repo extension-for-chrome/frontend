@@ -1,8 +1,7 @@
 import React from 'react';
 import { FormControl, InputLabel, Input, Button } from '@material-ui/core';
 
-
-const BaseForm = () => {
+const BaseForm = ({ data }: any) => {
     return (
         <section className="App form" >
             <h1 className="logo">AddToContact</h1>
